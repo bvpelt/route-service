@@ -1,0 +1,27 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: bart
+      changes:
+        - createTable:
+            tableName: logging
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: entrydata
+                  type: date
+              - column:
+                  name: message
+                  type: text
+              - column:
+                  name: extrainfo
+                  type: text
+              - column:
+                  name: loglevel
+                  type: text
