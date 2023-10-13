@@ -1,0 +1,74 @@
+spring:
+  application:
+    name: '@project.name@'
+  main:
+    banner-mode: 'off'
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: 'jdbc:postgresql://localhost/route'
+    username: testuser
+    password: 12345
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.yaml
+    enabled: true
+  jpa:
+    database: postgresql
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    open-in-view: false
+
+build:
+  version: '@project.version@'
+  description: '@project.description@'
+  timestamp: '@timestamp@'
+
+server:
+  servlet:
+    context-path: /api/v1
+
+management:
+  info:
+    env:
+      enabled: true
+  server:
+    port: 8081
+  endpoint:
+    health:
+      show-details: always
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      path-mapping:
+        info: app-info
+        health: app-health
+      exposure:
+        include: '*'
+        exclude:
+
+info:
+  app:
+    name: '@project.name@'
+    description: '@project.description@'
+    version: '@project.version@'
+    java:
+      version: '@java.version@'
+
+  logging:
+    level:
+      org:
+        hibernate:
+          SQL: DEBUG
+          type:
+            descriptor:
+              sql:
+                BasicBinder: TRACE
+      nl:
+        bsoft: DEBUG

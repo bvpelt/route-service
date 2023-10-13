@@ -15,7 +15,7 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: entrydate
-                  type: date
+                  type: timestamp with time zone
               - column:
                   name: message
                   type: text

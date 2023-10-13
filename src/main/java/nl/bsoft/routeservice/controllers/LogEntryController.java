@@ -10,20 +10,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-/*
-@CrossOrigin(
-        origins = "http://localhost:8080",
-       // originPatterns =  "*",
-        allowCredentials = "true",
-        allowedHeaders = {"*"},
-        methods = {
-                RequestMethod.GET,
-                RequestMethod.DELETE,
-                RequestMethod.POST,
-                RequestMethod.OPTIONS
-        })
- */
-
 @RestController
 @Slf4j
 public class LogEntryController {
@@ -34,9 +20,9 @@ public class LogEntryController {
         this.logService = logService;
     }
 
-    @GetMapping("/api/logs")
+    @GetMapping("/logs")
     public ResponseEntity<LogEntryList> getLogEntries() {
-        log.info("/api/logs - get");
+        log.info("/logs - get");
         Iterable<LogEntry> logEntries = logService.getAll();
         LogEntryList logEntriesResult = new LogEntryList();
 
@@ -50,9 +36,9 @@ public class LogEntryController {
     /*
     POST
      */
-    @PostMapping("/api/logs")
+    @PostMapping("/logs")
     public ResponseEntity<LogEntryResult> saveLogEntry(@RequestBody final LogEntry logEntry) {
-        log.info("/api/logs - post, body: {}", logEntry);
+        log.info("/logs - post, body: {}", logEntry);
 
         LogEntry savedLogEntry = logService.save(logEntry);
         LogEntryResult logEntryResult = new LogEntryResult();
