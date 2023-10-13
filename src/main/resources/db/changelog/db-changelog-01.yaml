@@ -4,7 +4,7 @@ databaseChangeLog:
       author: bart
       changes:
         - createTable:
-            tableName: logging
+            tableName: log_entry
             columns:
               - column:
                   name: id
@@ -14,7 +14,7 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: entrydata
+                  name: entrydate
                   type: date
               - column:
                   name: message

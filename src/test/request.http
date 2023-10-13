@@ -1,0 +1,16 @@
+POST http://localhost:8080/api/logs
+Content-Type: application/json
+
+{
+  "entryDate": "2023-10-12T18:00:53.721Z",
+  "message": "Started Homecomponent",
+  "level": 0,
+  "extraInfo": "een",
+  "logWithDate": true
+}
+
+###
+GET http://localhost:8080/api/logs
+Accept: application/json
+
+###
