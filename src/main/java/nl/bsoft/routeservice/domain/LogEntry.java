@@ -1,7 +1,6 @@
 package nl.bsoft.routeservice.domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
