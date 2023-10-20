@@ -30,6 +30,8 @@ build:
 server:
   servlet:
     context-path: /api/v1
+  http2:
+    enabled: true
 
 management:
   info:
